@@ -2,7 +2,7 @@ function JarmView(){
   $.gameQuery.LockedView.call(this, game.farmer.elem, $.playground(), game.background, {
     width: game.worldSize,
     height: game.worldSize,
-    imageURL: "images/grass.png"
+    imageURL: "images/grass.jpg"
   });
 
   // update rate happens less often since it isn't necessary
@@ -14,6 +14,7 @@ function JarmView(){
   this.msgLastDraw = null;
 
   this.drawInventory();
+  this.drawSeeds();
 }
 JarmView.prototype = $.gameQuery.LockedView.prototype;
 
@@ -57,6 +58,20 @@ JarmView.prototype.drawInventory = function(){
   }
 
   $("#inventory").html(text);
+  $("#money").html(game.farmer.money);
+}
+
+JarmView.prototype.drawSeeds = function(){
+  var current;
+  var text = "";
+
+  if (game.farmer.seeds.length === 0){
+    text = "<i>Nothing</i>";
+  }else{
+    text = mapJoin(game.farmer.seeds, "<br />", function(obj) { return obj.name; });
+  }
+
+  $("#seeds").html(text);
   $("#money").html(game.farmer.money);
 }
 

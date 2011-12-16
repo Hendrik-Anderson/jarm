@@ -101,8 +101,8 @@ function activateRock(rock){
     view.addMessage("Nothing found.");
   }else{
     view.addMessage("Found " + plant.name + ".");
-    game.farmer.addItem(plant);
-    view.drawInventory();
+    game.farmer.addItemSeeds(plant);
+	view.drawSeeds();
   }
 }
 

@@ -21,25 +21,38 @@ function Farmer(){
 
   // TODO: make more advanced inventory system
   this.inventory = [];
+  this.seeds = [];
   this.money = 0;
   this.facing = "south";
 }
-Farmer.moveSpeed = 5;
+Farmer.moveSpeed = 10;
 
 Farmer.prototype.setPos = function(x, y){
   this.pos.x = x;
   this.pos.y = y;
 }
 
-Farmer.prototype.addItem = function(item){
+Farmer.prototype.addItemSeeds = function(item){
+  this.seeds.push(item);
+};
+
+Farmer.prototype.addItemInventory = function(item){
   this.inventory.push(item);
 };
 
-Farmer.prototype.getItem = function(which){
+Farmer.prototype.getItemSeeds = function(which){
+  return this.seeds[which];
+};
+
+Farmer.prototype.getItemInventory = function(which){
   return this.inventory[which];
 };
 
-Farmer.prototype.removeItem = function(which){
+Farmer.prototype.removeItemSeeds = function(which){
+  this.seeds.splice(which, 1);
+};
+
+Farmer.prototype.removeItemInventory = function(which){
   this.inventory.splice(which, 1);
 };
 
@@ -99,8 +112,12 @@ Farmer.prototype.move = function(dx, dy){
 };
 
 
-Farmer.prototype.eachItem = function(foo){
+Farmer.prototype.eachItemInventory = function(foo){
   $.each(this.inventory, foo);
+};
+
+Farmer.prototype.eachItemSeeds = function(foo){
+	$.each(this.seeds, foo);
 };
 
 Farmer.prototype.moveTo = function(targetPoint, obj){

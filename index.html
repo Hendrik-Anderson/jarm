@@ -14,15 +14,19 @@
     <div id = "sidebar">
       Inventory:
       <div id = "inventory"></div>
-      Money: <span id = "money">0</span>
+      Money: <span id = "money">0</span><p>
       <div id = "instructions">
-        <b>Controls:</b><br />
+        <b>Controls:</b><p />
         Move: Left click<br />
         Search: Left click on rock<br />
         Plant: Left click on garden<br />
         Buy/Sell: Left click on shop
       </div>
     </div>
+	<div id="seedsbar">
+	  Seeds:
+      <div id = "seeds"></div>
+	</div>
     <div class = "dialog" id = "dialog">
       <a class = "close-button" onclick = "game.dialog.close(); return false">X</a>
       <div class = "dlg-content"></div>
@@ -38,13 +42,8 @@
         <div id = "shop-sell"></div>
       </div>
     </div>
-    <div class = "description">
-      Check out the Github repo <a href = "http://github.com/robbrit/jarm" target = "_blank">here</a>.
-      Find a bug or have a suggestion? Submit it on the
-      <a href = "http://github.com/robbrit/jarm/issues" target = "_blank">issues page</a>.
-    </div>
     <script type = "text/javascript" src = "jquery-1.4.2.min.js"></script>
-    <script type = "text/javascript" src = "jquery.gamequery-0.4.0.js"></script>
+    <script type = "text/javascript" src = "jquery.gamequery-0.5.1.js"></script>
     <script type = "text/javascript" src = "jquery.gamequery.ext.js"></script>
     <script type = "text/javascript" src = "helpers.js"></script>
     <script type = "text/javascript" src = "events.js"></script>

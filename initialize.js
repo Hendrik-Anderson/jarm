@@ -24,7 +24,7 @@ $(function(){
 
 function loadPlants(){
   var tree = new Animation({imageURL: "images/tree.png"});
-  for (var i = 0; i < 10; i++){
+  for (var i = 0; i < 50; i++){
     var x = Math.floor(Math.random() * (game.worldSize - 38));
     var y = Math.floor(Math.random() * (game.worldSize - 38));
     game.playground.addSprite("tree" + i, {animation: tree, width: 45, height: 38,
